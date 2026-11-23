@@ -3,3 +3,9 @@ class PortfolioTrackerError(Exception):
 
 class DuplicateTickerError(PortfolioTrackerError):
     pass
+
+class InvalidPriceError(PortfolioTrackerError):
+    pass
+
+class UnknownTickerError(PortfolioTrackerError):
+    pass
