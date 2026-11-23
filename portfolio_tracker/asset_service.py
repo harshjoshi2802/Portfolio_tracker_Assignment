@@ -1,4 +1,5 @@
 import math
+
 from .asset import Asset
 
 from .errors import DuplicateTickerError, InvalidPriceError, UnknownTickerError
@@ -29,4 +30,10 @@ class AssetService:
             raise InvalidPriceError(f"{price} is not a valid price")
 
         self.prices[ticker_name] = float(price)
+
+    def list_assets(self):
+        results = []
+        for ticker, asset in self.assets.items():
+            results.append((ticker, asset.name, self.prices.get(ticker)))
+        return results
 
